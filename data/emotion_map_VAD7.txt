@@ -1,0 +1,7 @@
+VAD1: disappointed, lonely, nostalgic, sad
+VAD2: afraid, annoyed, anxious, apprehensive, ashamed, devastated, disgusted, embarrassed, guilty, jealous, terrified
+VAD3: caring, sentimental
+VAD4: anticipating, confident, content, faithful, grateful, hopeful, prepared
+VAD5: angry, furious
+VAD6: impressed
+VAD7: excited, joyful, proud, surprised, trusting
