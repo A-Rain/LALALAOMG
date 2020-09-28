@@ -163,10 +163,10 @@ def train(cfg, model: JointSentiGPT2Model, train_dataloader: DataLoader, val_dat
                 emotion_logits = [(element,) for element in emotion_logits]
                 if cfg.normalize:
                     src_hidden_states = [(F.normalize(element, p=2, dim=-1),) for element in src_hidden_states]
-                    target_hidden_states = F.normalize(torch.cat(target_hidden_states, dim=-1), p=2, dim=-1).detach()
+                    target_hidden_states = F.normalize(torch.cat(target_hidden_states, dim=0), p=2, dim=-1).detach()
                 else:
                     src_hidden_states = [(element,) for element in src_hidden_states]
-                    target_hidden_states = torch.cat(target_hidden_states, dim=-1).detach()
+                    target_hidden_states = torch.cat(target_hidden_states, dim=0).detach()
 
             else:
                 lm_logits, emotion_logits, src_hidden_states, target_hidden_states = outputs[:4]
