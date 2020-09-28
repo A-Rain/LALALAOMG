@@ -185,7 +185,7 @@ def train(cfg, model: JointSentiGPT2Model, train_dataloader: DataLoader, val_dat
             if global_step >= cfg.only_nll_step:
                 step_calc_emotion += 1
             if global_step >= cfg.calc_hid_dist_step:
-                distribution_distance_record.writelines(str(loss_hid_dist.item()) + '\n')
+                distribution_distance_record.writelines(str(loss_hid_dist.item() if isinstance(loss_emotion, torch.Tensor) else 0) + '\n')
                 step_calc_dist += 1
 
             avg_train_loss += loss.item()
